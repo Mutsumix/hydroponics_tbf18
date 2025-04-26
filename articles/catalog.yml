@@ -5,7 +5,9 @@ PREDEF:
 CHAPS:
 # 水耕栽培生活の紹介
 #  - hydroponic_life.re
+
 # 装置について
+- device.re
 
 # 種植えから収穫までの流れ（イラスト）
 
@@ -19,16 +21,16 @@ CHAPS:
 # スペックの読み方
 
 # その他
-## 失敗集
+# レシピ
+##- recipe.re
+
 ## 便利グッズ
-#  - other.re
+- other.re
 
 # 今後の展望
-#  - future.re
-
+- future.re
 
 # APPENDIX:
-
 
 POSTDEF:
 # あとがき
