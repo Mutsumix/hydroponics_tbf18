@@ -4,7 +4,7 @@ PREDEF:
 
 CHAPS:
 # 水耕栽培生活の紹介
-#  - hydroponic_life.re
+- hydroponic_life.re
 
 # 装置について
 - device.re
