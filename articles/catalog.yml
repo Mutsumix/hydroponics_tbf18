@@ -17,13 +17,13 @@ CHAPS:
 #  - cultivation.re
 
 # センサーで監視プログラム作成
-#  - sensor.re
+- sensor.re
 
 # スペックの読み方
 
 # その他
 # レシピ
-##- recipe.re
+- recipe.re
 
 ## 便利グッズ
 - other.re

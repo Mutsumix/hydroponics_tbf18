@@ -58,12 +58,15 @@ USBタップ@<fn>{usb}	2つ	Amazon	1,335円
 品目	個数	購入先	目安の価格
 ------------------
 ハイポニカ@<fn>{hiponica}	1セット（A液+B液）	Amazon	1,345円
+カルシウム@<fn>{calcium}	1つ	Amazon	551円
 結束バンド@<fn>{binder_band}	1つ	Amazon	1,400円
+アイストレー（１２個取り）@<fn>{ice_tray}	1つ	DAISO	200円
 //}
 
 //footnote[hiponica][@<href>{https://amzn.asia/d/9Fe28l3} ハイポニカ]
+//footnote[calcium][@<href>{https://amzn.asia/d/a29lnJt} カルシウムエキス 100cc]
 //footnote[binder_band][@<href>{https://amzn.asia/d/bcBInFG} マジックテープでカット可能なもの]
-
+//footnote[ice_tray][@<href>{https://jp.daisonet.com/products/4549892005596} フタ付きのもの]
 
 すべて買うとXX,XXX円です。すべて同じもので揃えなければならない、というものはなく、なければ同じようなサイズ、機能をもつ代替製品を探していただければと思います。
 
