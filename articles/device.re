@@ -26,20 +26,20 @@
 スチールラック@<fn>{rack}	1セット	カインズ	5,480円
 LED@<fn>{led}	8本	Amazon	1,480円
 LEDケーブル@<fn>{ledcable}	1つ（2本セット）	Amazon	1,000円
-USBタップ@<fn>{usb}	2つ	Amazon	1,335円
+電源タップ@<fn>{power_strip}	1つ	Amazon	1,599円
 //}
 
 //footnote[rack][@<href>{https://www.cainz.com/g/4549509247951.html } 幅46cmで5段表記のもの ]
-//footnote[led][@<href>{https://amzn.asia/d/0aEvOcb} 幅43cm。4本セットを２つ買うとお得です]
+//footnote[led][@<href>{https://amzn.asia/d/0aEvOcb} 幅43cm。4本セット（4,520円）を２つ買うとお得です]
 //footnote[ledcable][@<href>{https://amzn.asia/d/8QwS5nr} 棚板から棚板までのケーブル]
-//footnote[usb][@<href>{https://amzn.asia/d/3tqjmFo}]
+//footnote[power_strip][@<href>{https://amzn.asia/d/3P6EhVV}]
 
 //table["grow_device"][キャベツ育成装置関連の購入用品一覧]{
 品目	個数	購入先	目安の価格
 ------------------
 スクエア収納ボックス（浅型）@<fn>{squarebox_med}	4つ	DAISO	100円
 スクエア収納ボックス用フタ@<fn>{squarebox_lid}	3つ	DAISO	100円
-エアポンプ@<fn>{airpump}	2つ	Amazon	2,098円
+エアポンプ@<fn>{airpump}	1つ	Amazon	2,098円
 エアストーン@<fn>{airstone}	2つ	Amazon	300円
 ソフトチューブ@<fn>{tube}	1本	Amazon	330円
 エアチューブ 4分岐@<fn>{tee}	1つ	Amazon	899円
