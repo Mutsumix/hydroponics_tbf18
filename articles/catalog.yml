@@ -1,12 +1,12 @@
 PREDEF:
-# はじめに
+# はじめに（完了）
  - 00_introduction.re
 
 CHAPS:
-# 水耕栽培生活の紹介
+# 水耕栽培生活の紹介（完了）
 - hydroponic_life.re
 
-# 装置について
+# 装置について（あとは写真）
 - device.re
 
 # 種植えから収穫までの流れ
@@ -19,13 +19,11 @@ CHAPS:
 # レシピ
 - recipe.re
 
-## ランニングコストの話、便利グッズなど
+## ランニングコストの話、便利グッズなど（完了）
 - other.re
 
-# 今後の展望
+# 今後の展望（完了）
 - future.re
-
-# APPENDIX:
 
 POSTDEF:
 # あとがき
