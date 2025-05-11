@@ -63,14 +63,71 @@ CO2センサーは単体でも使用することはできますが、連携さ�
 またアプリで確認すると若干遅い、という点がデメリットです。
 マカレルでダッシュボードを自由に作成しブラウザにブックマークすることで、これらのデメリットを解消することができ、監視の自由度が高まります。
 
-以上でセンサーの準備は完了です。
-上記の理由を読んで、面白そうだなやってみたい、と思った方はこのまま次の説明に取り掛かりましょう。
+以上でセンサーの準備は完了です。上記の理由を読んで、面白そうだなやってみたい、と思った方はこのまま次の説明に取り掛かってください。
 
 === SwitchBot APIなどの取得
 
-開発者モードに入り、
-続いて機器のDeviceIDを取得します
-TODO: DeviceIDチェッカー必要かも
+SwitchBotをAPIから操作する方法を説明します。
+
+SwitchBotは、SwitchBot Hubを通してインターネットに接続されていることを前提としています。
+
+==== 認証用トークンの取得
+
+まずは、API認証用のトークンを取得します。
+SwitchBotアプリの 設定 > 開発者向けオプション から確認可能です。
+開発者向けオプション は、設定 > 基本データ の アプリバージョン を10回ほどタップすると表示されるようになります。
+
+==== SwitchBotの設定
+
+APIから操作するために、SwitchBotの「クラウドサービス」をオンにしてください（SwitchBotアプリV9.0から、クラウドサービスの項目自体が削除されていて、手動でオンにする必要がなくなりました）
+
+==== APIから操作する
+
+こちらのAPIドキュメントから詳細を確認できます。@<fn>{switchbot_api}
+
+//footnote[switchbot_api][@<href>{https://github.com/OpenWonderLabs/SwitchBotAPI#switchbotapi, SwitchBot API}]
+
+まずは、SwitchBotの deviceId を取得します。
+Authorization には、最初に取得した認証用トークンを指定してください。
+
+//emlist[curlコマンドでデバイス一覧を取得する][curlコマンドでデバイス一覧を取得する]{
+curl --request GET 'https://api.switch-bot.com/v1.0/devices' \
+  --header 'Authorization: 認証用トークン' \
+  --header 'Content-Type: application/json; charset=utf8'
+//}
+
+下記のようなレスポンスが返ってくるので、SwitchBotの deviceId を確認してください。
+
+
+//emlist[curlコマンドで取得したデバイス一覧][curlコマンドで取得したデバイス一覧]{
+{
+    "statusCode": 100,
+    "body": {
+        "deviceList": [
+            {
+                "deviceId": "D9A1DDFECB0F",
+                "deviceName": "ハブ",
+                "deviceType": "Hub Mini",
+                "enableCloudService": true,
+                "hubDeviceId": "000000000000"
+            },
+            {
+                "deviceId": "B0E9FE533857",
+                "deviceName": "CO2センサー",
+                "deviceType": "MeterPro(CO2)",
+                "enableCloudService": true,
+                "hubDeviceId": "000000000000"
+            }
+        ],
+        "infraredRemoteList": []
+    },
+    "message": "success"
+}
+//}
+
+ここで取得したデバイス一覧の中から、CO2センサーの deviceId を確認してください。
+ここで取得したCO2センサーの deviceId を後ほどLambdaの環境変数に設定します。
+
 
 == Lambdaを使ったセンサーの値の取得
 
@@ -120,9 +177,19 @@ Zipをダウンロードして、解凍します。
 
 続いてAWSの画面に戻ります。検索画面に「Lambda」と入れてください
 pyton,
-環境変数
-
 パッケージのアップロード
+
+==== 環境変数の設定
+環境変数に以下の情報を設定します。
+
+SWITCHBOT_TOKEN：SwitchBotの開発者向けオプションで「トークン」の項目で確認可能
+SWITCHBOT_SECRET：SwitchBotの開発者向けオプションで「クライアントシークレット」の項目で確認可能
+SWITCHBOT_DEVICE_ID：Curlコマンドで取得したCO2センサーの deviceId
+
+MACKEREL_API_KEY
+MACKEREL_SERVICE_NAME
+
+
 
 ここまでできたらテストを実行しましょう
 画面にXXXと出たらOKです。あえて
@@ -144,6 +211,8 @@ CRONで次のように設定します。
 
 筆者はGrafanaにこんなダッシュボードを作成しています。
 こうすれば、視覚的に今どうなっているのか把握しやすいですし、外出先でも簡単に生育環境の状況を確認することができます。
+
+このように指定します
 
 1.
 
