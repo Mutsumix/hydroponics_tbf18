@@ -17,7 +17,7 @@ review_version: 5.8
 # inherit: ["A.yml", "B.yml"]
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
-bookname: everyday-lettuce
+bookname: everyday-cabbage
 # 記述言語。省略した場合はja
 language: ja
 
