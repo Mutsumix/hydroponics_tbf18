@@ -19,7 +19,7 @@
 
 全体の構成図を以下に示します。
 
-//image[sensor/monitoring_overview.drawio][全体の構成図][scale=0.75]
+//image[sensor/monitoring_overview.drawio][全体の構成図]
 
 それでは見ていきましょう。
 
@@ -28,11 +28,11 @@
  * SwitchBot CO2センサー（温湿度計）@<fn>{switchbot_co2_sensor}
  * SwitchBot ハブミニ@<fn>{switchbot_hub_mini}
 
-//image[switchbot_co2_sensor][CO2センサー][scale=0.75]
-//image[switchbot_hub_mini][ハブミニ][scale=0.75]
+//image[switchbot_co2_sensor][CO2センサー][scale=0.5]
+//image[switchbot_hub_mini][ハブミニ][scale=0.5]
 
-//footnote[switchbot_co2_sensor][@<href>{https://www.switchbot.jp/products/switchbot-co2-meter, SwitchBot CO2センサー（温湿度計）}]
-//footnote[switchbot_hub_mini][@<href>{https://www.switchbot.jp/products/switchbot-hub-mini, SwitchBot ハブミニ（関連商品のハブ2, ハブ3でも可}]
+//footnote[switchbot_co2_sensor][@<href>{https://www.switchbot.jp/products/switchbot-co2-meter} SwitchBot CO2センサー（温湿度計）]
+//footnote[switchbot_hub_mini][@<href>{https://www.switchbot.jp/products/switchbot-hub-mini} SwitchBot ハブミニ（関連商品のハブ2, ハブ3でも可}]
 
 === CO2センサーを使用するにあたっての初期設定
 
@@ -41,7 +41,7 @@ SwitchBotの公式アプリを使用し、ハブミニにセンサーを認識�
 
 詳細な手順は、機器のバージョンによって変わるので、機器購入時のマニュアルやSwitchBotの公式サイトを参照してください。@<fn>{switchbot_manual}
 
-//footnote[switchbot_manual][@<href>{https://support.switch-bot.com/hc/ja/articles/20426539496727-%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%A8%88%E6%B8%A9%E6%B9%BF%E5%BA%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E9%81%A0%E9%9A%94%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95-%E3%83%8F%E3%83%96%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95, SwitchBot ハブミニ マニュアル}]
+//footnote[switchbot_manual][@<href>{https://support.switch-bot.com/hc/ja/articles/20426539496727-%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%A8%88%E6%B8%A9%E6%B9%BF%E5%BA%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E9%81%A0%E9%9A%94%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95-%E3%83%8F%E3%83%96%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95} SwitchBot ハブミニ マニュアル]
 
 CO2センサーは単体でも使用することはできますが、連携させることで、家の外からのモニタリングが可能になります。
 
@@ -49,12 +49,12 @@ CO2センサーは単体でも使用することはできますが、連携さ�
 
 ではなぜ、このような外部サービスを使った監視を行うのか、その理由を説明します。
 
- * 様々な形での通知が可能。
+==== 様々な形での通知が可能。
  アプリが入っているスマホにプッシュ通知を送ることはできますが、自分以外にも通知をしたい、通知の手段としてメールやチャットサービスを使いたい、といったニーズもあります。
 クラウドサービスと連携させることで、これらのニーズに応えることができます。
 メールやSlackといったサービスを通して通知をすることが可能になるので、通知の自由度を高めることができます。
 
- * 思い通りのダッシュボードを作成できる
+==== 思い通りのダッシュボードを作成できる
 アプリでの値の確認方法ですが、期間や表示形式はアプリ提供者の方法に従うしかありません。
 またアプリで確認すると若干遅い、という点がデメリットです。
 Mackerelでダッシュボードを自由に作成しブラウザにブックマークすることで、これらのデメリットを解消することができ、監視の自由度が高まります。
@@ -65,9 +65,9 @@ Mackerelでダッシュボードを自由に作成しブラウザにブックマ
 
 プログラムを使ってセンサーの値をモニタリングするためには、API連携の準備が必要です。
 
-次の作業を行なっていきます。
+主に次の作業を行なっていきます。
 
- 1. SwitchBotのAPI関連情報の取得
+ 1. SwitchBotの認証用トークンの取得
  1. AWSのアカウント作成
  1. Mackerelのアカウント作成
  1. MackerelのAPIキーの取得
@@ -82,17 +82,17 @@ SwitchBotは、SwitchBot Hubを通してCO2センサーがインターネット�
 SwitchBotアプリの 設定 > 開発者向けオプション から確認可能です。
 開発者向けオプション は、設定 > 基本データ の アプリバージョン を10回ほどタップすると表示されるようになります。
 
-//image[app_version][アプリバージョンを10回ほどタップ][scale=0.75]
-//image[app_version_detail][開発者向けオプションが表示される][scale=0.75]
-//image[app_version_detail_2][開発者向けオプションからトークン情報が確認可能][scale=0.75]
+//image[app_version][アプリバージョンを10回ほどタップ][scale=0.4]
+//image[app_version_detail][開発者向けオプションが表示される][scale=0.4]
+//image[app_version_detail_2][開発者向けオプションからトークン情報が確認可能][scale=0.4]
 
-=== SwitchBot クラウドサービス設定（現在は不要）
+==== SwitchBot クラウドサービス設定（現在は不要）
 
 APIから操作するために、SwitchBotの「クラウドサービス」をオンにしてください。（SwitchBotアプリV9.0から、クラウドサービスの項目自体が削除されていて、手動でオンにする必要がなくなりました）@<fn>{switchbot_cloud_service}
 
 //footnote[switchbot_cloud_service][@<href>{https://blog.switchbot.jp/announcement/switchbot-app-9-0/, SwitchBot アプリバージョン9.0]
 
-=== SwitchBot デバイスIDの取得
+==== SwitchBot デバイスIDの取得
 
 続いて、SwitchBotの deviceId を取得します。
 コマンド内のAuthorization には、先ほど開発者向けオプションで確認した認証用トークンを指定してください。
@@ -135,7 +135,7 @@ curl --request GET 'https://api.switch-bot.com/v1.0/devices' \
 
 APIドキュメントの詳細はGitHubから確認できます。@<fn>{switchbot_api}
 
-//footnote[switchbot_api][@<href>{https://github.com/OpenWonderLabs/SwitchBotAPI#switchbotapi, SwitchBot API}]
+//footnote[switchbot_api][@<href>{https://github.com/OpenWonderLabs/SwitchBotAPI#switchbotapi} SwitchBot API]
 
 === AWSアカウントの作成
 
@@ -162,21 +162,21 @@ Mackerelのサインアップ画面にアクセスします。@<fn>{mackerel_sig
 
 //image[mackerel_signup][Mackerelのサインアップ画面][scale=0.75]
 
-//footnote[mackerel_signup][@<href>{https://mackerel.io/signup, Mackerelのサインアップ画面}]
+//footnote[mackerel_signup][@<href>{https://mackerel.io/signup} Mackerelのサインアップ画面]
 
 オーガニゼーション（組織）名を最初に設定する必要があるので、適当な名前を設定します。個人で利用にチェックを入れて「作成」ボタンを選択します。
 
-//image[mackerel_organization][オーガニゼーションの画面][scale=0.75]
+//image[mackerel_organization][オーガニゼーションの画面][scale=1.0]
 
 プランを選択する画面が表示されますので、Trialプランを選択します。
 
-//image[mackerel_plan][プランを選択する画面][scale=0.75]
+//image[mackerel_plan][プランを選択する画面][scale=1.0]
 
 こちらはサインアップ時にカード情報の入力は不要なので、以上でアカウント作成は完了します。
 
 //image[mackerel_dashboard][ダッシュボードの画面][scale=0.75]
 
-==== MackerelのAPIキーの取得
+=== MackerelのAPIキーの取得
 
 続いてAPIを取得します。
 
@@ -225,7 +225,7 @@ GitHubからプログラムのソースコードを取得します。
 
 著者のリポジトリにアクセスしてください。@<fn>{switchbot_co2_mackerel}
 
-//footnote[switchbot_co2_mackerel][@<href>{https://github.com/Mutsumix/switchbot-co2-mackerel, プログラムのリポジトリ}]
+//footnote[switchbot_co2_mackerel][@<href>{https://github.com/Mutsumix/switchbot-co2-mackerel} プログラムのリポジトリ]
 
 アクセスした先の画面で、「Code」ボタンを選択し「Download ZIP」を選択して、Zipファイルをダウンロードして、解凍します。
 
@@ -349,7 +349,7 @@ AWSの検索画面に「EventBridge」と入力して、トップに表示され
 
  フレックスタイムウィンドウは、「オフ」
 
- //image[aws_eventbridge_create_schedule_3][フレックスタイムウィンドウの設定][scale=0.75]
+//image[aws_eventbridge_create_schedule_3][フレックスタイムウィンドウの設定][scale=0.75]
 
  「次へ」ボタンを選択します。
 
@@ -358,7 +358,7 @@ AWSの検索画面に「EventBridge」と入力して、トップに表示され
  * ターゲットの種類：Lambda関数
  * 関数名：switchbot-co2-monitor
 
- //image[aws_eventbridge_create_schedule_4][ターゲットの詳細の設定][scale=0.75]
+//image[aws_eventbridge_create_schedule_4][ターゲットの詳細の設定][scale=0.75]
 
 「次へ」ボタンを選択します。
 
@@ -385,7 +385,7 @@ AWSの検索画面に「EventBridge」と入力して、トップに表示され
 
 左側のメニューから「ダッシュボード」を選択し、「カスタムダッシュボードを作成」ボタンを選択します。
 
-//image[mackerel_dashboard_create][ダッシュボードの作成][scale=0.75]
+//image[mackerel_dashboard_create][ダッシュボードの作成例][scale=0.75]
 
 任意のダッシュボード名を入力します。
 
@@ -430,7 +430,7 @@ Mackerelのメニューにある「監視ルール」を設定することで、
 
 通知の手段は、メール、Slack、Chatwork、Microsoft Teamsなどから選択できます。@<fn>{mackerel_notification}
 
-//footnote[mackerel_notification][@<href>{かつてはLINEも選択肢にありましたが、LINE Notifyが2025年3月31日にサービス終了することになったため、現在は選択することができません}]
+//footnote[mackerel_notification][かつてはLINEも選択肢にありましたが、LINE Notifyが2025年3月31日にサービス終了したため、現在は選択することができません]
 
 この辺りは、もし興味があれば、ご自身で調べて設定すると良いでしょう。
 
@@ -446,4 +446,4 @@ Mackerelのメニューにある「監視ルール」を設定することで、
 
 //image[switchbot_camera][Switchbotのネットワークカメラで撮影した画像][scale=0.75]
 
-このカメラで撮った写真を定期的にGooglePhotoに送ることができれば、簡単にタイムラプス動画が作成できるのに、と思っているのですが、うまい方法をまだ見つけられていません。
+このカメラで撮った写真を定期的にGooglePhotoに送ることができれば、簡単にタイムラプス動画が作成できるのに、と思っているのですが、うまい方法をまだ見つけられていません。今後の課題です。
