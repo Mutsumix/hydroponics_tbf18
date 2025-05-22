@@ -41,7 +41,7 @@ LEDケーブル@<fn>{ledcable}	2つ（2本セット）	Amazon	1,000円
 スクエア収納ボックス用フタ@<fn>{squarebox_lid}	3つ	DAISO	100円
 スクエア収納ボックス（小型）@<fn>{squarebox_small}	1つ	DAISO	100円
 エアポンプ@<fn>{airpump}	1つ	Amazon	2,098円
-エアストーン@<fn>{airstone}	2つ	Amazon	300円
+エアストーン@<fn>{airstone}	4つ	Amazon	300円
 ソフトチューブ@<fn>{tube}	1本	Amazon	330円
 エアチューブ 4分岐@<fn>{tee}	1つ	Amazon	899円
 水中ポンプ@<fn>{waterpump}	4つ	Amazon	1,499円
@@ -52,8 +52,8 @@ LEDケーブル@<fn>{ledcable}	2つ（2本セット）	Amazon	1,000円
 //footnote[squarebox_lid][@<href>{https://jp.daisonet.com/products/4549131611014} 白以外のもの]
 //footnote[squarebox_small][@<href>{https://jp.daisonet.com/products/4549131611038} 白以外のもの]
 //footnote[airpump][@<href>{https://amzn.asia/d/emhjwFs} 水心 ＳＳＰＰ－３Ｓ（エア量ダイヤル調整式）]
-//footnote[airstone][@<href>{https://amzn.asia/d/8mzCTpo} GEX製 ぶくぶく泡が出る石]
-//footnote[tube][@<href>{https://amzn.asia/d/9QwS5nr} GEX製 4.5m]
+//footnote[airstone][@<href>{https://amzn.asia/d/1MX7XKo} GEX製 ぶくぶく泡が出る石]
+//footnote[tube][@<href>{https://amzn.asia/d/8mzCTpo} GEX製 4.5m]
 //footnote[tee][@<href>{https://amzn.asia/d/9LPkS5P} エアーを分岐させるためのもの]
 //footnote[waterpump][@<href>{https://amzn.asia/d/9CN109H} USB給電のもの]
 //footnote[ice_tray][@<href>{https://jp.daisonet.com/products/4549892005596} フタ付きのもの]
@@ -72,7 +72,7 @@ LEDケーブル@<fn>{ledcable}	2つ（2本セット）	Amazon	1,000円
 //footnote[binder_band][@<href>{https://amzn.asia/d/bcBInFG} マジックテープでカット可能なもの]
 //footnote[cabbage_seed][@<href>{https://amzn.asia/d/j50ZGR2} サカタのタネ 四季まきキャベツ 中早生二号]
 
-すべて買うと33,065円です。すべて同じもので揃えなければならない、というものはなく、なければ同じようなサイズ、機能をもつ代替製品を探していただければと思います。
+すべて買うと34,000円ほどです。すべて同じもので揃えなければならない、というものはなく、なければ同じようなサイズ、機能をもつ代替製品を探していただければと思います。
 
 購入先としてはAmazonがメインです。あとは私の愛用する園芸店兼百円ショップであるDAISOも多いです。
 
@@ -268,6 +268,32 @@ LED蛍光灯8本、水中ポンプ、エアーポンプ1台から分岐させた
 後ろから見るとこのようになります。
 
 //image[tower_back][完成図（後ろから）][scale=0.75]
+
+==  これでもOK！シンプルな水耕栽培装置について
+
+ここまで読んでいかがでしょうか。
+まさか3万円以上かかる装置を500円の本に提案されるとは思わなかった方もいらっしゃるかもしれません。
+
+できるだけシンプルに安価にと努力したつもりではありますが、なかなかの金額と組み立てに伴う労働が発生するのも事実です。
+
+そこで、最小構成の水耕栽培装置のご提案です。
+それは先ほど紹介した、２段目にのせる発芽装置と育苗装置だけで始めるというものです。
+
+光源には、クリップ式のLEDが向きや位置を簡単に変えられるので、使い勝手がよくおすすめです。@<fn>{clip_led}
+
+//image[clip_led][最小構成の水耕栽培装置][scale=0.75]
+
+//footnote[clip_led][@<href>{https://amzn.asia/d/b4jcujX} クリップ式でスタンド付きのLED]
+
+この装置であれば3,000円で作れます。
+
+慣れてきたら、収穫装置を一つ、また一つと追加していけば良いのです。
+
+これなら無理なく、自然な形で水耕栽培を始めることができるのではないかと思います。
+
+著者も最初は卵のパックで発芽させた種を、ペットボトルをカットしただけの栽培装置で育てるところから始めて今に至ります。
+
+やり方は一つではありません。ぜひ自分の環境に合わせた始め方で水耕栽培を楽しんでください。
 
 //comment{
 
